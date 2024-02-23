@@ -37,7 +37,7 @@ As I explore more multi-agent with AutoGen, OpenAI bill amounts up quickly. For 
     3. Git clone this repo
     4. Create the .env file
 * Run into this error and don't know what's wrong. The same script runs fine with OpenAI. The sample py file runs OK locally.
-    - This issue was caused by the output of the previous step. Codellama doesn't return the selected agents as an array of names, which messes up the next steps.
+    - This issue was caused by the output of agent_builder.build_from_library. Codellama doesn't return the selected agents as an array of names, which messes up the next steps.
 
     ```
     ==> Looking for suitable agents in library...

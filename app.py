@@ -15,7 +15,7 @@ llm_config = {"temperature": 0}
 
 config_list = autogen.config_list_from_json(
     config_file_or_env, 
-    filter_dict={"model": [m.strip() for m in model_list]}
+    filter_dict={"model": model_list}
 )
 
 
@@ -90,6 +90,8 @@ position_list = create_positions()
 
 library_path_or_json = json.dumps(position_list)
 
+print("AGENT LIBRARY:", library_path_or_json)
+
 building_task = """Find a paper on arxiv by programming, and analyze its application in some domain. 
 For example, find a recent paper about gpt-4 on arxiv and find its potential applications in software.
 """
@@ -98,10 +100,14 @@ agent_builder = AgentBuilder(
     config_file_or_env=config_file_or_env, builder_model=model_list[0], agent_model=model_list[0]
 )
 
+# this function returns an array of agents. The format is very specific to OpenAI.
+# Codellama returns a more descriptive result, which messes up the next step. 
 agent_list, _ = agent_builder.build_from_library(
     building_task, library_path_or_json, llm_config, 
     coding=True, code_execution_config = {"work_dir": "coding", "use_docker": True }
 )
+
+print("AGENT LIST: ", agent_list)
 
 start_task(
     execution_task="Find a recent paper about explainable AI on arxiv and find its potential applications in medical.",

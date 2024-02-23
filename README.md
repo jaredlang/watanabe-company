@@ -30,12 +30,14 @@ As I explore more multi-agent with AutoGen, OpenAI bill amounts up quickly. For 
 
 * My Windows laptop is too slow to run this program locally. It doesn't even have a GPU.
 * 1xA10 instance on [Lambda Labs](https://cloud.lambdalabs.com/instances) is a better option.
-* Steps to run it on an Lambda instance 
-    1. Install [Ollama](https://ollama.com/download/linux) 
-    2. Install [Docker](https://docs.docker.com/engine/install/ubuntu/) 
-    3. Git clone this repo 
+* Steps to run it on an Lambda instance
+    1. Install [Ollama](https://ollama.com/download/linux)
+    2. Install [Docker](https://docs.docker.com/engine/install/ubuntu/)
+    3. Start docker as a damon: sudo systemctl start docker
+    3. Git clone this repo
     4. Create the .env file
 * Run into this error and don't know what's wrong. The same script runs fine with OpenAI. The sample py file runs OK locally.
+    - This issue was caused by the output of the previous step. Codellama doesn't return the selected agents as an array of names, which messes up the next steps.
 
     ```
     ==> Looking for suitable agents in library...

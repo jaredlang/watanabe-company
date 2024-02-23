@@ -1,6 +1,7 @@
 # Create my bot company with AutoGen to complete a task
 
 As I explore more multi-agent with AutoGen, OpenAI bill amounts up quickly. For a persona project, I want to research on how to utilize local LLM with AutoGen.
+
     * with OpenAI
         - Without a doubt, OpenAI leads the chart of easy-to-use and quality chat.
         - OpenAI gets expensive when multiple agents chat with each other.

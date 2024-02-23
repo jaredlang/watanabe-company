@@ -11,7 +11,7 @@ from autogen.retrieve_utils import TEXT_FORMATS
 ######################################################################
 config_list_mistral = [
     {
-        "base_url": "http://localhost:35666/v1",
+        "base_url": "http://localhost:11434/v1",
         "api_key": "sk-111111111111",        
         "model": "TheBloke/Llama-2-7B-32K-Instruct-GGUF"
     }
@@ -19,7 +19,7 @@ config_list_mistral = [
 
 config_list_codellama = [
     {
-        "base_url": "http://localhost:8000/v1",
+        "base_url": "http://localhost:11434/v1",
         "api_key": "sk-111111111111",        
         "model": "TheBloke/Llama-2-7B-32K-Instruct-GGUF"
     }

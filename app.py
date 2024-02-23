@@ -9,7 +9,7 @@ load_dotenv()
 
 # load the config file and model from .env
 config_file_or_env = os.environ["LLM_CONFIG_LIST"]
-model_list = os.environ["LLM_MODEL"].split(",")
+model_list = [m.strip() for m in os.environ["LLM_MODEL"].split(",")]
 
 llm_config = {"temperature": 0}
 
@@ -95,12 +95,12 @@ For example, find a recent paper about gpt-4 on arxiv and find its potential app
 """
 
 agent_builder = AgentBuilder(
-    config_file_or_env=config_file_or_env, builder_model="gpt-4-1106-preview", agent_model="gpt-4-1106-preview"
+    config_file_or_env=config_file_or_env, builder_model=model_list[0], agent_model=model_list[0]
 )
 
 agent_list, _ = agent_builder.build_from_library(
     building_task, library_path_or_json, llm_config, 
-    coding=True, code_execution_config = { "use_docker": True }
+    coding=True, code_execution_config = {"work_dir": "coding", "use_docker": True }
 )
 
 start_task(

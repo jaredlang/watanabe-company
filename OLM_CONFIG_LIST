@@ -1,0 +1,12 @@
+[
+    {
+        "model": "mistral:latest",
+        "api_key": "fakekey", 
+        "base_url": "http://localhost:11434/v1"
+    },
+    {
+        "model": "codellama:latest",
+        "api_key":  "fakekey", 
+        "base_url": "http://localhost:11434/v1"
+    }
+]

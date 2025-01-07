@@ -97,7 +97,7 @@ For example, find a recent paper about gpt-4 on arxiv and find its potential app
 """
 
 agent_builder = AgentBuilder(
-    config_file_or_env=config_file_or_env, builder_model=model_list[0], agent_model=model_list[0]
+    config_file_or_env=config_file_or_env, builder_model=model_list[0], agent_model=model_list[1]
 )
 
 # this function returns an array of agents. The format is very specific to OpenAI.
